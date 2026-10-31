@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autabox — Software House</title>
+  <meta name="description" content="Autabox: desenvolvimento de sites, aplicativos e sistemas sob medida.">
+  <link rel="icon" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf9f6;
+      --ink: #1c1c1c;
+      --muted: #5f5b55;
+      --line: #1c1c1c;
+      --accent: #f2a900;
+      --accent-soft: #fff1c9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Quicksand", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0;
+    }
+    .brand { font-size: 1.4rem; font-weight: 600; letter-spacing: .02em; text-decoration: none; }
+    .brand span { border-left: 1.5px solid var(--line); padding-left: 2px; }
+    nav a { margin-left: 24px; text-decoration: none; font-weight: 500; color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+
+    .hero {
+      display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 32px;
+      padding: 32px 0 64px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; font-weight: 600; }
+    .hero h1 mark {
+      background: linear-gradient(transparent 60%, var(--accent-soft) 60%);
+      color: inherit;
+    }
+    .hero p { margin: 20px 0 32px; font-size: 1.1rem; color: var(--muted); max-width: 32ch; }
+    .hero-img {
+      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 52%;
+      border-radius: 4px;
+    }
+    .btn {
+      display: inline-block; padding: 12px 28px; border: 1.5px solid var(--line);
+      border-radius: 999px; text-decoration: none; font-weight: 600;
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--accent-soft); }
+    .btn.primary { background: var(--ink); color: var(--bg); }
+    .btn.primary:hover { background: #000; }
+
+    section { padding: 64px 0; border-top: 1px solid #e7e2da; }
+    h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 8px; }
+    .lead { color: var(--muted); margin-bottom: 40px; max-width: 56ch; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .card { border: 1.5px solid var(--line); border-radius: 6px; padding: 24px; background: #fff; }
+    .card svg { width: 36px; height: 36px; margin-bottom: 12px; }
+    .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
+    .card p { color: var(--muted); font-size: .95rem; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; counter-reset: s; }
+    .step::before {
+      counter-increment: s; content: counter(s);
+      display: inline-grid; place-items: center; width: 36px; height: 36px; margin-bottom: 10px;
+      border-radius: 50%; background: var(--accent); font-weight: 600;
+    }
+    .step h3 { font-size: 1.05rem; font-weight: 600; }
+    .step p { color: var(--muted); font-size: .95rem; }
+
+    .contact { text-align: center; }
+    .contact .lead { margin-left: auto; margin-right: auto; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: .9rem; border-top: 1px solid #e7e2da; }
+
+    @media (max-width: 720px) {
+      nav { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 8px; }
+      .hero-img { order: -1; max-width: 360px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">auta<span>box</span></a>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#como">Como trabalhamos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1>Tiramos sua ideia <mark>da caixa</mark> e transformamos em software.</h1>
+        <p>Desenvolvemos sites, aplicativos e sistemas sob medida para o seu negócio crescer.</p>
+        <a class="btn primary" href="#contato">Fale com a gente</a>
+      </div>
+      <img class="hero-img" src="logo.jpg" alt="Logo Autabox: pessoa subindo uma escada de dentro de uma caixa segurando uma lâmpada acesa">
+    </div>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <h2>O que fazemos</h2>
+      <p class="lead">Do primeiro rascunho ao sistema no ar, cuidamos de todas as etapas.</p>
+      <div class="cards">
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 8h18M8 21h8"/></svg>
+          <h3>Sites</h3>
+          <p>Sites institucionais e landing pages rápidos, bonitos e que funcionam bem no celular.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          <h3>Aplicativos</h3>
+          <p>Apps para Android e iOS, pensados para quem vai usar no dia a dia.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          <h3>Sistemas sob medida</h3>
+          <p>Sistemas web com banco de dados, painéis de gestão e integrações.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+          <h3>Automação</h3>
+          <p>Automatizamos tarefas repetitivas para sua equipe focar no que importa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <h2>Como trabalhamos</h2>
+      <p class="lead">Um processo simples e transparente, com você acompanhando cada passo.</p>
+      <div class="steps">
+        <div class="step"><h3>Conversa</h3><p>Entendemos sua ideia, seu negócio e o que você precisa.</p></div>
+        <div class="step"><h3>Proposta</h3><p>Apresentamos escopo, prazo e investimento, sem surpresas.</p></div>
+        <div class="step"><h3>Desenvolvimento</h3><p>Entregas parciais para você testar e opinar durante o projeto.</p></div>
+        <div class="step"><h3>Entrega e suporte</h3><p>Colocamos no ar e seguimos ao seu lado depois do lançamento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="wrap">
+      <h2>Vamos tirar sua ideia da caixa?</h2>
+      <p class="lead">Conte o que você precisa e retornamos rapidinho.</p>
+      <div class="contact-links">
+        <!-- TODO: trocar pelo número real (só dígitos, com 55 + DDD) -->
+        <a class="btn primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
+        <!-- TODO: confirmar e-mail -->
+        <a class="btn" href="mailto:contato@autabox.com">contato@autabox.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="ano"></span> Autabox · autabox.com
+  </footer>
+
+  <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>
